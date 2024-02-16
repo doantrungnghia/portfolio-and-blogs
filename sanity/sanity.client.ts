@@ -1,8 +1,8 @@
 import { createClient, type ClientConfig } from "@sanity/client";
 
 const config: ClientConfig = {
-  projectId: process.env.SANITY_PROJECT_ID || '',
-  dataset: "production",
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
+  dataset: process.env.SANITY_STUDIO_DATASET || '',
   useCdn: false,
 };
 

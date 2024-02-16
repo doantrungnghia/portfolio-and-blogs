@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'Portfolio and Blogs',
 
-  projectId: process.env.SANITY_PROJECT_ID || '',
-  dataset: process.env.SANITY_DATASET || '',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '8bb0n6i6',
+  dataset: process.env.SANITY_STUDIO_DATASET || 'production',
 
   // This is folder name of app/studio
   basePath: "/studio",
