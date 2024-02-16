@@ -16,4 +16,8 @@ bun run setup # Remove all of my personal information
 bun dev
 ```
 
-Create a `.env.local` file similar to [`.env.example`](https://github.com/leerob/leerob.io/blob/main/.env.example).
+Create a `.env.local` file similar to `.env.example`
+
+## Sanity
+
+Navigate to /studio to log in to your Sanity account, where you can access and edit content once you've signed up.
