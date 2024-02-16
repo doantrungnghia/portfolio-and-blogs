@@ -10,7 +10,7 @@ import {
 let googleAuth = new auth.GoogleAuth({
   credentials: {
     client_email: process.env.GOOGLE_CLIENT_EMAIL,
-    private_key: process.env.GOOGLE_PRIVATE_KEY,
+    private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
   },
   scopes: ['https://www.googleapis.com/auth/youtube.readonly'],
 });
@@ -51,7 +51,7 @@ export async function getViewsCount(): Promise<
 export const getLeeYouTubeSubs = cache(
   async () => {
     let response = await yt.channels.list({
-      id: ['UCZMli3czZnd1uoc1ShTouQw'],
+      id: ['UCKUowslHbAKwXuRa55PX77g'],
       part: ['statistics'],
     });
 
@@ -67,7 +67,7 @@ export const getLeeYouTubeSubs = cache(
 export const getVercelYouTubeSubs = cache(
   async () => {
     let response = await yt.channels.list({
-      id: ['UCLq8gNoee7oXM7MvTdjyQvA'],
+      id: ['UCKUowslHbAKwXuRa55PX77g'],
       part: ['statistics'],
     });
 

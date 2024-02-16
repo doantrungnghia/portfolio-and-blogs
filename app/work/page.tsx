@@ -13,104 +13,101 @@ async function Stars() {
   return `${count}k stars`;
 }
 
+const Block = ({ title, subtitle, children } : { title: string, subtitle: string, children: React.ReactNode }) => {
+  return (
+    <div>
+      <h2 className="font-medium text-xl mb-1 tracking-tighter">{title}</h2>
+      <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+        {subtitle}
+      </p>
+      <div className='mt-6'>
+        {children}
+      </div>
+    </div>
+  )
+}
+
 export default function WorkPage() {
   return (
     <section>
-      <h1 className="font-medium text-2xl mb-8 tracking-tighter">my work</h1>
+      <h1 className="font-medium text-4xl mb-8 tracking-tighter">Tech stack</h1>
+
+      <div className='flex flex-col gap-4'>
+        <p>
+          <b>Frontend Languages:</b> ReactJS, React Native, NextJS (TypeScript)
+        </p>
+        <p>
+          <b>Backend Languages:</b> NodeJS, NestJS (TypeScript)
+        </p>
+        <p>
+          <b>Unit Test:</b> Jest
+        </p>
+        <p>
+          <b>Integration Test:</b> Cypress
+        </p>
+        <p>
+          <b>Database:</b> PostgreSQL
+        </p>
+        <p>
+          <b>Tools:</b> Fastlane, Docker
+        </p>
+      </div>
+
       <div className="prose prose-neutral dark:prose-invert">
-        <p>
-          On a mission to build products developers{' '}
-          <Link href="/blog/developer-experience-examples">love</Link>, and
-          along the way, teach the next generation of developers. Here's a
-          summary of my work so far.
-        </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
-        <h2 className="font-medium text-xl mb-1 tracking-tighter">Vercel</h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          VP of Product
-        </p>
-        <p>
-          I joined <a href="https://vercel.com/home">Vercel</a> early to grow{' '}
-          <a href="https://nextjs.org">Next.js</a> and our developer community.
-          I built our Developer Relations team to teach our community about our
-          products.
-        </p>
-        <ul>
-          <li>
-            In 2021, I was promoted to Director of DevRel. We{' '}
-            <a href="https://twitter.com/kelseyhightower/status/1105985400110112768">
-              translated customer pain
-            </a>{' '}
-            back into the product roadmap. We spoke at{' '}
-            <Link href="/blog/nextjs-conf-2022-recap">conferences</Link>, wrote
-            blog posts, and created videos. We built open-source examples and
-            contributed back to the product.
-          </li>
-          <li>
-            In 2022, I was promoted to VP of Developer Experience, now also
-            leading our product documentation team. My team created a{' '}
-            <a href="https://nextjs.org/learn">new free course</a> to teach
-            Next.js, which had 17 million page views that year.{' '}
-            <a href="https://twitter.com/leeerob/status/1608900031859527682">
-              I shipped.
-            </a>{' '}
-            I partnered with our open-source community, collaborating with
-            frameworks like{' '}
-            <a href="https://vercel.com/docs/frameworks/nuxt">Nuxt</a> and{' '}
-            <a href="https://astro.build/blog/vercel-official-hosting-partner/">
-              Astro
-            </a>{' '}
-            and sponsoring individuals and projects.
-          </li>
-          <li>
-            In 2023, I was promoted to VP of Product, now also leading Product
-            Management.
-          </li>
-        </ul>
-        <p>
-          Since I joined Vercel in 2020, Next.js active developers have grown
-          1000%, now at ~900k. Next.js is now a top 10 software project on
-          GitHub with <Stars />. It's used by Walmart, ChatGPT, Starbucks, Okta,
-          Datastax, Notion, and <a href="https://nextjs.org/showcase">more</a>.
-        </p>
-        <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
-        <h2 className="font-medium text-xl mb-1 tracking-tighter">Hy-Vee</h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          Senior Software Engineer, 2018 — 2020
-        </p>
-        <p>
-          Hy-Vee, an almost 100-year-old grocery chain in the United States,
-          wanted to build a new version of their digital storefront. I joined a
-          team of <Link href="/blog/product-engineers">product engineers</Link>{' '}
-          working across web and mobile to rebuild their legacy .NET application
-          (~500k MAU) with React and React Native.
-        </p>
-        <p>
-          On the frontend, I led our move from a custom webpack and React
-          configuration to Next.js and the latest React patterns. In the
-          process, I shared my learnings online, helping educate members of the
-          React and Next.js community by creating courses.
-        </p>
-        <p>
-          Throughout my two years, I was able to work on some hard problems:
-          decoupling a decade old monolith into microservices, working with a
-          federated GraphQL API, learning and occasionally managing a Kubernetes
-          cluster, building and implementing a design system, incrementally
-          migrating individual components and routes to a new framework and
-          infrastructure, and more.
-        </p>
-        <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
-        <h2 className="font-medium text-xl mb-1 tracking-tighter">Workiva</h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          Software Engineer, 2015 — 2018
-        </p>
-        <p>
-          Workiva ($WK) is a cloud platform for data reporting and compliance.
-          During my time at Workiva, I gained my first production experience
-          using React. I worked on tooling to help predict and alert and
-          regressions in our SaaS platform, building a product similar to
-          open-source tools like Sentry.
-        </p>
+
+        <h1 className="font-medium text-4xl mb-8 tracking-tighter">Projects</h1>
+
+        <Block title="Mellori" subtitle='Software Engineer, 2019 - 2022'>
+          <p>
+            Our education project aims to cultivate an optimal learning environment that fosters growth and success for both educators and students alike.
+          </p>
+          <p>
+            <b>June 2019 - December 2020:</b> Research and build demo, almost many features was removed when start in Jan 2021.
+          </p>
+          <p>
+            <b>Jan 2021 to May 2022:</b> Web version.
+          </p>
+           <p>
+            <b>June 2022 to December 2022:</b> Mobile version.
+          </p>
+        </Block>
+
+        <Block title="Ademco" subtitle='Software Engineer, 2022 - present'>
+          <p>
+            Mobile project about apartment management. Allow admin to manage house owner, tenant and theirs guest, manage time to open facilities. Allow owner, tenant to book facilities and register their guest to access apartment.
+          </p>
+        </Block>
+
+        <Block title="Squarely" subtitle='Software Engineer, 2023'>
+          <p>
+            Squarely Finance is your comprehensive solution for effortless financial management. With our intuitive platform, users can seamlessly register accounts with supported banks via Stripe integration, enabling hassle-free access to a range of financial services like Bank Account Registration, Multi-Currency Wallets, Money Transfer and Conversion.
+          </p>
+        </Block>
+
+        <Block title="Inform" subtitle='Software Engineer, 2022'>
+          <p>
+            A dynamic platform that enables users to effortlessly create and publish surveys. Surveys support a variety of question types, including multiple and picture choice, multiple questions, long and short text, true/false questions.
+          </p>
+        </Block>
+
+        <Block title="Eyeset" subtitle='Software Engineer, 2023'>
+          <p>
+            Eyeset is a React Native application designed to enhance your navigation experience. With Eyeset, users can effortlessly explore maps, select destinations, and receive guided directions, similar to popular navigation apps like Google Maps. What sets Eyeset apart is its integration of real-time data sourced from the Singapore government.
+          </p>
+        </Block>
+
+        <Block title="JML" subtitle='Freelancer Software Engineer, 2024'>
+          <p>
+            Our eCommerce project, powered by MedusaJS, offers essential functionalities for eCommerce carts, customer management, checkout processes, order management,...
+          </p>
+        </Block>
+
+        <Block title="Fastbo" subtitle='Freelancer Software Engineer, 2024'>
+          <p>
+            Our project enables users to submit data through a user-friendly interface, which is then processed and displayed within a predefined HTML template. Upon submission, users receive a response in the form of an image containing the template UI filled with the submitted data.
+          </p>
+        </Block>
       </div>
     </section>
   );
