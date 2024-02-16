@@ -5,6 +5,9 @@ export const sql = postgres(process.env.POSTGRES_URL, {
 });
 
 const nextConfig = {
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
   experimental: {
     ppr: true,
     useLightningcss: true,
