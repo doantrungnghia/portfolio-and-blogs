@@ -1,7 +1,4 @@
 import Link from 'next/link';
-import { Suspense } from 'react';
-import ViewCounter from './view-counter';
-import { getViewsCount } from 'app/db/queries';
 import { getBlogs } from 'sanity/sanity.query';
 import { BlogType } from 'types';
 
@@ -36,8 +33,5 @@ export default async function BlogPage() {
   );
 }
 
-async function Views({ slug }: { slug: string }) {
-  let views = await getViewsCount();
-
-  return <ViewCounter allViews={views} slug={slug} />;
-}
+// revalidate at most every hour
+export const revalidate = 3600

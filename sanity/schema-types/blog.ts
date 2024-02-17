@@ -1,4 +1,3 @@
-
 import { defineField } from "sanity";
 
 const blog = {
@@ -28,10 +27,20 @@ const blog = {
       rows: 4,
     },
     {
-      name: "content",
-      title: "Content",
-      type: "array",
-      of: [{ type: "block" }, { type: 'image' }],
+      name: 'content',
+      type: 'array',
+      title: 'Content',
+       of: [
+        {
+          type: 'block'
+        },
+        {
+          type: 'image'
+        },
+        {
+          type: 'code'
+        }
+      ],
     },
     {
       name: "thumbnail",
@@ -46,6 +55,14 @@ const blog = {
           type: "string",
         },
       ],
+    },
+    {
+      title: "Published?",
+      name: "published",
+      type: "boolean",
+      initialValue: true,
+      description:
+        "Set to published when this blog should be visible to all users",
     },
   ],
 };

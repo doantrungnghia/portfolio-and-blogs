@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { getBlog } from "../../../sanity/sanity.query";
 import type { BlogType } from "../../../types";
 import { PortableText } from "@portabletext/react";
+import SanityImage from "app/components/sanity-image";
 
 type Props = {
   params: {
@@ -28,6 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Blog({ params }: Props) {
   const blog: BlogType = await getBlog(params.slug);
 
+  console.log(blog, "blog");
+
   return (
     <main className="mx-auto px-4">
       <div className="max-w-4xl mx-auto">
@@ -46,9 +49,21 @@ export default async function Blog({ params }: Props) {
         />
 
         <div className="flex flex-col gap-y-6 mt-8 leading-7 text-zinc-400">
-          <PortableText value={blog.content} />
+          <PortableText
+            value={blog.content}
+            components={{
+              types: {
+                image: ({ value }) => {
+                  return <SanityImage {...value} />;
+                },
+              },
+            }}
+          />
         </div>
       </div>
     </main>
   );
 }
+
+// revalidate at most every hour
+export const revalidate = 10;

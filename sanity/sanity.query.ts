@@ -4,13 +4,14 @@ import client from "./sanity.client";
 
 export async function getBlogs() {
   return client.fetch(
-    groq`*[_type == "blog"]{
+    groq`*[_type == "blog" && published == true]{
       _id,
       title,
       thumbnail { alt, "image": asset->url },
       content,
       "slug": slug.current,
       metaDescription,
+      published,
     }`
   );
 }
@@ -23,7 +24,8 @@ export async function getBlog(slug: string) {
       thumbnail { alt, "image": asset->url },
       content,
       "slug": slug.current,
-      metaDescription
+      metaDescription,
+      published
     }`,
     { slug }
   );

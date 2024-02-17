@@ -1,11 +1,11 @@
 import { createClient, type ClientConfig } from "@sanity/client";
+import { sanityDefaultConfig } from '../sanity.config'
 
-const config: ClientConfig = {
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
-  dataset: process.env.SANITY_STUDIO_DATASET || '',
+export const sanityClientConfig: ClientConfig = {
+  ...sanityDefaultConfig,
   useCdn: false,
 };
 
-const client = createClient(config);
+const client = createClient(sanityClientConfig);
 
 export default client;
