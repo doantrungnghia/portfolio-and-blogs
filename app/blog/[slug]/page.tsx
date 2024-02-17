@@ -3,6 +3,10 @@ import { Metadata } from "next";
 import { getBlog } from "../../../sanity/sanity.query";
 import type { BlogType } from "../../../types";
 import PortableParser from "app/components/portable-parser";
+import { isEmpty } from 'lodash'
+import NotFound from "app/not-found";
+import { redirect } from 'next/navigation';
+import Loading from "./loading";
 
 type Props = {
   params: {
@@ -28,13 +32,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Blog({ params }: Props) {
   const blog: BlogType = await getBlog(params.slug);
 
-  console.log(blog, "blog");
+  if(isEmpty(blog)) {
+    redirect('/not-found')
+  }
 
   return (
     <main className="mx-auto px-4">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-start justify-between mb-4">
-          <h1 className="font-bold lg:text-5xl text-3xl lg:leading-tight mb-4">
+          <h1 className="font-bold lg:text-5xl text-3xl lg:leading-tight">
             {blog.title}
           </h1>
         </div>
