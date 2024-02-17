@@ -1,7 +1,7 @@
 'use client'
 
 import { PortableText } from "@portabletext/react";
-import SanityImage from "app/components/sanity-image";
+import SanityImage from "app/(site)/components/sanity-image";
 import { CopyBlock, dracula } from "react-code-blocks";
 
 const PortableParser = ({ value }: { value: any }) => {

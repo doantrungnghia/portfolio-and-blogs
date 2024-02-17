@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { unstable_noStore as noStore } from 'next/cache';
 import Image from 'next/image';
-import ViewCounter from 'app/blog/view-counter';
+import ViewCounter from 'app/(site)/blog/view-counter';
 import { PreloadResources } from 'app/preload';
 import {
   getLeeYouTubeSubs,

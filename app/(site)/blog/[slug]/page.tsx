@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { getBlog } from "../../../sanity/sanity.query";
-import type { BlogType } from "../../../types";
-import PortableParser from "app/components/portable-parser";
+import { getBlog } from "../../../../sanity/sanity.query";
+import type { BlogType } from "../../../../types";
+import PortableParser from "app/(site)/components/portable-parser";
 import { isEmpty } from 'lodash'
 import NotFound from "app/not-found";
 import { redirect } from 'next/navigation';
