@@ -18,7 +18,7 @@ export async function getBlogs() {
 
 export async function getBlog(slug: string) {
   return client.fetch(
-    `*[_type == "blog" && slug.current == $slug][0]{
+    groq`*[_type == "blog" && slug.current == $slug][0]{
       _id,
       title,
       thumbnail { alt, "image": asset->url },

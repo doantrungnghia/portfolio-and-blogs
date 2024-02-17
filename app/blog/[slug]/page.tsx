@@ -2,8 +2,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { getBlog } from "../../../sanity/sanity.query";
 import type { BlogType } from "../../../types";
-import { PortableText } from "@portabletext/react";
-import SanityImage from "app/components/sanity-image";
+import PortableParser from "app/components/portable-parser";
 
 type Props = {
   params: {
@@ -49,16 +48,7 @@ export default async function Blog({ params }: Props) {
         />
 
         <div className="flex flex-col gap-y-6 mt-8 leading-7 text-zinc-400">
-          <PortableText
-            value={blog.content}
-            components={{
-              types: {
-                image: ({ value }) => {
-                  return <SanityImage {...value} />;
-                },
-              },
-            }}
-          />
+          <PortableParser value={blog.content} />
         </div>
       </div>
     </main>
@@ -66,4 +56,4 @@ export default async function Blog({ params }: Props) {
 }
 
 // revalidate at most every hour
-export const revalidate = 10;
+export const revalidate = 2;

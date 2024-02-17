@@ -1,8 +1,11 @@
+import * as dotenv from 'dotenv'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './sanity/schema-types'
 import {codeInput} from '@sanity/code-input'
+
+dotenv.config()
 
 export const sanityDefaultConfig = {
   projectId: process.env.SANITY_STUDIO_PROJECT_ID || '8bb0n6i6',
