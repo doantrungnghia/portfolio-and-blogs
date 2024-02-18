@@ -6,7 +6,7 @@
 - **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
 - **CMS**: [Sanity](https://www.sanity.io/)
 
-## Stater template
+## Starter template
 
 https://github.com/leerob/leerob.io
 
