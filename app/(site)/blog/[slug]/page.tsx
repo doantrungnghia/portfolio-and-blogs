@@ -62,4 +62,4 @@ export default async function Blog({ params }: Props) {
 }
 
 // revalidate at most every hour
-export const revalidate = 2;
+export const revalidate = 3600
