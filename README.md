@@ -8,6 +8,16 @@
 
 ## Running Locally
 
+### Create an Sanity application
+
+Go to [Sanity](https://www.sanity.io) to create an application and pass key to environments `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET`
+
+### Environment variables
+
+Set up environment variables following `.env.example`
+
+### Running
+
 This application requires Node.js v18.17+.
 
 ```bash
@@ -20,7 +30,7 @@ Create a `.env.local` file similar to `.env.example`
 
 ## Sanity
 
-Navigate to /studio to log in to your Sanity account, where you can access and edit content once you've signed up.
+Navigate to `/studio` to log in to your Sanity account, where you can access and edit content once you've signed up.
 
 Updates made to your site would be triggered only on build time → If you update a field in your studio using the hosted link, you would have to manually trigger a deployment on Vercel to see the changes.
 
@@ -35,10 +45,13 @@ I choose ISR for this project about every hour
 
 When a request is made to a page that was pre-rendered at build time, it will initially show the cached page.
 
-Any requests to the page after the initial request and before 10 seconds are also cached and instantaneous.
-After the 10-second window, the next request will still show the cached (stale) page
-Next.js triggers a regeneration of the page in the background.
-Once the page generates successfully, Next.js will invalidate the cache and show the updated page. If the background regeneration fails, the old page would still be unaltered.
+- Any requests to the page after the initial request and before 10 seconds are also cached and instantaneous.
+
+- After the 10-second window, the next request will still show the cached (stale) page
+
+- Next.js triggers a regeneration of the page in the background.
+
+- Once the page generates successfully, Next.js will invalidate the cache and show the updated page. If the background regeneration fails, the old page would still be unaltered.
 
 ## NextAuth
 
