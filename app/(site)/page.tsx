@@ -200,8 +200,8 @@ export default function Page() {
       {/* <div className="my-8 flex flex-col sm:flex-row space-x-0 sm:space-x-4 space-y-4 sm:space-y-0 w-full">
         <ChannelLink
           img={avatar}
-          name="@leerob"
-          link="https://www.youtube.com/@leerob"
+          name="@"
+          link="https://www.youtube.com/@"
         />
         <ChannelLink
           img={vercel}
