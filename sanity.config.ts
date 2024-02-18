@@ -8,8 +8,8 @@ import {codeInput} from '@sanity/code-input'
 dotenv.config()
 
 export const sanityDefaultConfig = {
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '8bb0n6i6',
-  dataset: process.env.SANITY_STUDIO_DATASET || 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
+  dataset: process.env.SANITY_STUDIO_DATASET || '',
 }
 
 export default defineConfig({
