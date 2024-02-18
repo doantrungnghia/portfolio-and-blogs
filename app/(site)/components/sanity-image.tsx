@@ -1,6 +1,5 @@
 import urlBuilder from '@sanity/image-url'
 import {getImageDimensions} from '@sanity/asset-utils'
-import sanityConfig from '../../../sanity.config'
 
 const SanityImage = ({value, isInline}) => {
   const {width, height} = getImageDimensions(value)
