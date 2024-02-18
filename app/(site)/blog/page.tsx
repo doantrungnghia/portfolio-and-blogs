@@ -1,6 +1,7 @@
+import React from 'react'
 import Link from 'next/link';
-import { getBlogs } from 'sanity/sanity.query';
-import { BlogType } from 'types';
+import { getBlogs } from '../../../sanity/sanity.query';
+import { BlogType } from '../../../types';
 
 export const metadata = {
   title: 'Blog',

@@ -7,8 +7,8 @@ const SanityImage = ({value, isInline}) => {
   return (
     <img
       src={urlBuilder({
-        projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
-        dataset: process.env.SANITY_STUDIO_DATASET || '',
+        projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
+        dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || '',
       })
         .image(value)
         .width(isInline ? 100 : 800)

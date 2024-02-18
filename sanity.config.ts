@@ -1,15 +1,12 @@
-import dotenv from 'dotenv';
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './sanity/schema-types'
 import {codeInput} from '@sanity/code-input'
 
-dotenv.config()
-
 export const sanityDefaultConfig = {
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
-  dataset: process.env.SANITY_STUDIO_DATASET || '',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || '',
 }
 
 export default defineConfig({
