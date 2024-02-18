@@ -3,6 +3,8 @@ import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
+// https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image#generate-images-using-code-js-ts-tsx
+// This function is responsible for handling HTTP GET requests and generating dynamic Open Graph images based on the parameters provided in the request URL.
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const postTitle = searchParams.get('title');
@@ -21,7 +23,6 @@ export async function GET(req: NextRequest) {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          backgroundImage: 'url(https://leerob.io/og-bg.png)',
         }}
       >
         <div

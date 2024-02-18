@@ -4,8 +4,7 @@ import Image from 'next/image';
 import ViewCounter from 'app/(site)/blog/view-counter';
 import { PreloadResources } from 'app/preload';
 import {
-  getLeeYouTubeSubs,
-  getVercelYouTubeSubs,
+  getYouTubeSubs,
   getViewsCount,
 } from 'app/db/queries';
 
@@ -66,7 +65,7 @@ function ChannelLink({ img, link, name }) {
               {name}
             </p>
             <Suspense fallback={<p className="h-6" />}>
-              <Subs name={name} />
+              <Subs />
             </Suspense>
           </div>
         </div>
@@ -78,14 +77,10 @@ function ChannelLink({ img, link, name }) {
   );
 }
 
-async function Subs({ name }: { name: string }) {
+async function Subs() {
   noStore();
-  let subscribers;
-  if (name === '@leerob') {
-    subscribers = await getLeeYouTubeSubs();
-  } else {
-    subscribers = await getVercelYouTubeSubs();
-  }
+
+  const subscribers = await getYouTubeSubs();
 
   return (
     <p className="text-neutral-600 dark:text-neutral-400">

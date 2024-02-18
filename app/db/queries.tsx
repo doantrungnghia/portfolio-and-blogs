@@ -48,7 +48,7 @@ export async function getViewsCount(): Promise<
   `;
 }
 
-export const getLeeYouTubeSubs = cache(
+export const getYouTubeSubs = cache(
   async () => {
     let response = await yt.channels.list({
       id: ['UCKUowslHbAKwXuRa55PX77g'],
@@ -63,33 +63,3 @@ export const getLeeYouTubeSubs = cache(
     revalidate: 3600,
   }
 );
-
-export const getVercelYouTubeSubs = cache(
-  async () => {
-    let response = await yt.channels.list({
-      id: ['UCKUowslHbAKwXuRa55PX77g'],
-      part: ['statistics'],
-    });
-
-    let channel = response.data.items![0];
-    return Number(channel?.statistics?.subscriberCount).toLocaleString();
-  },
-  ['vercel-youtube-subs'],
-  {
-    revalidate: 3600,
-  }
-);
-
-export async function getGuestbookEntries() {
-  if (!process.env.POSTGRES_URL) {
-    return [];
-  }
-
-  noStore();
-  return sql`
-    SELECT id, body, created_by, updated_at
-    FROM guestbook
-    ORDER BY created_at DESC
-    LIMIT 100
-  `;
-}
