@@ -6,6 +6,10 @@
 - **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
 - **CMS**: [Sanity](https://www.sanity.io/)
 
+## Stater template
+
+https://github.com/leerob/leerob.io
+
 ## Running Locally
 
 ### Create an Sanity application
@@ -57,4 +61,3 @@ When a request is made to a page that was pre-rendered at build time, it will in
 All requests to /api/auth/* (signIn, callback, signOut, etc.) will automatically be handled by NextAuth.js.
 
 https://next-auth.js.org/getting-started/example
-
