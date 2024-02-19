@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React from "react";
 
 // https://merakiui.com/components/marketing/404-pages
 export default function NotFound() {

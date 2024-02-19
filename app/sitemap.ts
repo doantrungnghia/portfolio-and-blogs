@@ -1,7 +1,9 @@
-import { getBlogPosts } from 'app/db/blog';
+import { getBlogs } from "../sanity/sanity.query";
 
 export default async function sitemap() {
-  let blogs = getBlogPosts().map((post) => ({
+  const blogs = await getBlogs()
+
+  const customBlogs = blogs.map((post) => ({
     url: `https://doantrungnghia.com/blog/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));
@@ -11,5 +13,5 @@ export default async function sitemap() {
     lastModified: new Date().toISOString().split('T')[0],
   }));
 
-  return [...routes, ...blogs];
+  return [...routes, ...customBlogs];
 }

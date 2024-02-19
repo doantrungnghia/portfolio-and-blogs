@@ -2,11 +2,10 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { getBlog } from "../../../../sanity/sanity.query";
 import type { BlogType } from "../../../../types";
-import PortableParser from "app/(site)/components/portable-parser";
+import PortableParser from "../../components/portable-parser";
 import { isEmpty } from 'lodash'
-import NotFound from "app/not-found";
 import { redirect } from 'next/navigation';
-import Loading from "./loading";
+import React from "react";
 
 type Props = {
   params: {

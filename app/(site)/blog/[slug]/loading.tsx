@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Loading() {
   return (
     <div className="mx-auto px-4 w-full">

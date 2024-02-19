@@ -65,9 +65,9 @@ function ChannelLink({ img, link, name }) {
             <p className="font-medium text-neutral-900 dark:text-neutral-100">
               {name}
             </p>
-            <Suspense fallback={<p className="h-6" />}>
+            {/* <Suspense fallback={<p className="h-6" />}>
               <Subs />
-            </Suspense>
+            </Suspense> */}
           </div>
         </div>
         <div className="text-neutral-700 dark:text-neutral-300 transform transition-transform duration-300 group-hover:-rotate-12">
@@ -101,9 +101,9 @@ function BlogLink({ slug, name }) {
           <p className="font-medium text-neutral-900 dark:text-neutral-100">
             {name}
           </p>
-          <Suspense fallback={<p className="h-6" />}>
+          {/* <Suspense fallback={<p className="h-6" />}>
             <Views slug={slug} />
-          </Suspense>
+          </Suspense> */}
         </div>
         <div className="text-neutral-700 dark:text-neutral-300 transform transition-transform duration-300 group-hover:-rotate-12">
           <ArrowIcon />
@@ -135,7 +135,7 @@ export default function Page() {
 
       <div className="mt-4">
         <a href="https://github.com/doantrungnghia" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mr-2">
             <path fill-rule="evenodd" d="M12 .75a11.25 11.25 0 00-3.557 21.98c.563.104.77-.245.77-.546l-.006-1.929c-3.143.684-3.807-1.51-3.807-1.51-.513-1.275-1.255-1.615-1.255-1.615-.978-.67.074-.656.074-.656 1.08.075 1.65 1.106 1.65 1.106.96 1.647 2.52 1.17 3.136.896.098-.704.375-1.17.68-1.44-2.386-.272-4.893-1.19-4.893-5.304 0-1.17.42-2.126 1.106-2.877-.104-.274-.48-1.363.104-2.838 0 0 .944-.304 3.1 1.1.896-.249 1.854-.374 2.804-.378.947.004 1.903.129 2.804.378 2.156-1.404 3.1-1.1 3.1-1.1.584 1.475.208 2.564.104 2.838.684.75 1.106 1.707 1.106 2.877 0 4.124-2.512 5.03-4.905 5.296.386.33.73.983.73 1.98l-.006 2.933c0 .302.203.654.777.543A11.25 11.25 0 0012 .75z" clip-rule="evenodd"/>
           </svg>
           View My GitHub Profile
