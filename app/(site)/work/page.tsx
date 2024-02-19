@@ -1,5 +1,5 @@
+import React from 'react'
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -73,10 +73,13 @@ export default function WorkPage() {
           </p>
         </Block>
 
-        <Block title="Ademco" subtitle='Software Engineer, 2022 - present'>
+        <Block title="VerifSuite" subtitle='Software Engineer, 2022 - present'>
           <p>
             Mobile project about apartment management. Allow admin to manage house owner, tenant and theirs guest, manage time to open facilities. Allow owner, tenant to book facilities and register their guest to access apartment.
           </p>
+
+          <p><b>App store:</b> <a href='https://apps.apple.com/sg/app/verifsuite/id1610670528' target='_blank' rel='noopener noreferrer'>Link</a></p>
+          <p><b>Google Play:</b> <a href='https://play.google.com/store/apps/details?id=com.ademco&hl=en&gl=US' target='_blank' rel='noopener noreferrer'>Link</a></p>
         </Block>
 
         <Block title="Squarely" subtitle='Software Engineer, 2023'>
